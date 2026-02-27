@@ -1,0 +1,152 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.footer {
+  background: $dark-color;
+
+  &__main {
+    padding: 60px 0 40px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 48px;
+
+    @include respond-to('tablet') {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include respond-to('mobile') {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: $font-heading;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: $white;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+
+  &__desc {
+    font-size: 0.9rem;
+    color: rgba($white, 0.65);
+    line-height: 1.8;
+    margin-bottom: 24px;
+  }
+
+  &__social {
+    display: flex;
+    gap: 16px;
+
+    a {
+      font-size: 1.3rem;
+      transition: $transition;
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  h4 {
+    font-family: $font-heading;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $white;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__links ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    li a {
+      font-size: 0.9rem;
+      color: rgba($white, 0.65);
+      transition: $transition;
+
+      &:hover {
+        color: $primary-light;
+        padding-left: 4px;
+      }
+    }
+  }
+
+  &__contact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: rgba($white, 0.65);
+
+      span:first-child {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      a {
+        color: rgba($white, 0.65);
+        transition: $transition;
+
+        &:hover {
+          color: $primary-light;
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    border-top: 1px solid rgba($white, 0.1);
+    padding: 20px 0;
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      @include respond-to('mobile') {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+
+    p {
+      font-size: 0.85rem;
+      color: rgba($white, 0.5);
+    }
+
+    &-links {
+      display: flex;
+      gap: 24px;
+
+      a {
+        font-size: 0.85rem;
+        color: rgba($white, 0.5);
+        transition: $transition;
+
+        &:hover {
+          color: $primary-light;
+        }
+      }
+    }
+  }
+}

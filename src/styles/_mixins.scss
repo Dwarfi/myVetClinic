@@ -1,0 +1,115 @@
+@mixin container {
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin section-padding {
+  padding: 80px 0;
+}
+
+@mixin section-title {
+  text-align: center;
+  margin-bottom: 60px;
+
+  h2 {
+    font-family: $font-heading;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: $dark-color;
+    margin-bottom: 16px;
+    position: relative;
+    
+    &::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: $primary-color;
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
+  }
+
+  p {
+    font-size: 1.1rem;
+    color: $text-light;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@mixin button-primary {
+  background: $secondary-color;
+  color: $white;
+  padding: 14px 32px;
+  border-radius: 50px;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: $transition;
+  display: inline-block;
+
+  &:hover {
+    background: $secondary-light;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba($secondary-color, 0.4);
+  }
+}
+
+@mixin button-outline {
+  background: transparent;
+  color: $white;
+  padding: 13px 32px;
+  border-radius: 50px;
+  border: 2px solid $white;
+  font-family: $font-heading;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: $transition;
+  display: inline-block;
+
+  &:hover {
+    background: $white;
+    color: $primary-color;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == 'mobile' {
+    @media (max-width: 767px) { @content; }
+  } @else if $breakpoint == 'tablet' {
+    @media (max-width: 1199px) { @content; }
+  } @else if $breakpoint == 'desktop' {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+@mixin card {
+  background: $white;
+  border-radius: $border-radius;
+  box-shadow: $shadow;
+  transition: $transition;
+
+  &:hover {
+    box-shadow: $shadow-hover;
+    transform: translateY(-5px);
+  }
+}
+
+@mixin fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

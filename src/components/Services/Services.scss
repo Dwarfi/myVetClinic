@@ -1,0 +1,62 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.services {
+  background: $light-bg;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+
+    @include respond-to('tablet') {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to('mobile') {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__card {
+    @include card;
+    padding: 32px 24px;
+    text-align: center;
+    cursor: default;
+
+    &-icon {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    &-title {
+      font-family: $font-heading;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: $dark-color;
+      margin-bottom: 12px;
+    }
+
+    &-desc {
+      font-size: 0.9rem;
+      color: $text-light;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    &-link {
+      font-family: $font-heading;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: $primary-color;
+      transition: $transition;
+      display: inline-block;
+
+      &:hover {
+        color: $primary-dark;
+        transform: translateX(4px);
+      }
+    }
+  }
+}
