@@ -1,0 +1,78 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.pricing {
+  background: $light-bg;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+
+    @include respond-to('tablet') {
+      grid-template-columns: 1fr;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+  }
+
+  &__card {
+    @include card;
+    overflow: hidden;
+
+    &-header {
+      background: linear-gradient(135deg, $primary-color, $primary-dark);
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: $white;
+
+      h3 {
+        font-family: $font-heading;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__icon {
+    font-size: 2rem;
+  }
+
+  &__list {
+    padding: 24px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid $gray-light;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &-name {
+      font-size: 0.95rem;
+      color: $text-color;
+    }
+
+    &-price {
+      font-family: $font-heading;
+      font-weight: 600;
+      color: $primary-color;
+      white-space: nowrap;
+    }
+  }
+
+  &__note {
+    text-align: center;
+    color: $text-light;
+    font-size: 0.9rem;
+    margin-top: 32px;
+    font-style: italic;
+  }
+}
