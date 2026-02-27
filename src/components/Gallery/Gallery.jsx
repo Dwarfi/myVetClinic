@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Gallery.scss'
 
 const galleryItems = [
@@ -13,8 +13,6 @@ const galleryItems = [
 ]
 
 const Gallery = () => {
-  const [activeItem, setActiveItem] = useState(null)
-
   return (
     <section className="gallery section" id="gallery">
       <div className="container">
@@ -28,8 +26,6 @@ const Gallery = () => {
               key={i}
               className={`gallery__item gallery__item--${item.size} animate-on-scroll`}
               style={{ background: item.color }}
-              onMouseEnter={() => setActiveItem(i)}
-              onMouseLeave={() => setActiveItem(null)}
             >
               <div className="gallery__overlay">
                 <span className="gallery__icon">{item.icon}</span>
