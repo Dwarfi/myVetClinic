@@ -49,8 +49,8 @@ const About = () => {
       <div className="container">
         <div className="about__inner">
           <div className="about__content animate-on-scroll">
-            <div className="section-title" style={{textAlign: 'left'}}>
-              <h2 style={{textAlign: 'left'}}>About <span style={{color: '#2A9D8F'}}>MyVetClinic</span></h2>
+            <div className="section-title about__section-title">
+              <h2 className="about__heading">About <span className="about__heading-accent">MyVetClinic</span></h2>
             </div>
             <p className="about__text">
               Since 2013, MyVetClinic has been providing compassionate and professional 

@@ -17,6 +17,22 @@
     }
   }
 
+  &__section-title {
+    text-align: left;
+
+    h2::after {
+      margin: 16px 0 0;
+    }
+  }
+
+  &__heading {
+    text-align: left;
+
+    &-accent {
+      color: $primary-color;
+    }
+  }
+
   &__content {
     .section-title h2::after {
       margin: 16px 0 0;
